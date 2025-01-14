@@ -70,7 +70,6 @@ class PaypalPaymentService {
       // Check whether arguments are in the expected format
       final arguments = call.arguments;
       if (arguments is! Map) {
-        debugPrint('Unexpected arguments format: $arguments');
         return;
       }
       // Check which method was called by the native plugin
@@ -97,9 +96,6 @@ class PaypalPaymentService {
             payerId is String ? payerId : '',
           );
           break;
-        // Unknown method was called
-        default:
-          debugPrint('Unknown method call: ${call.method}');
       }
     } on Exception catch (e) {
       debugPrint('Error in _methodCallHandler: $e');

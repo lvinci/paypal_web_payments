@@ -23,7 +23,7 @@ void main() {
     );
   });
 
-  group('Paypal Payment Service Tests', () {
+  group('PaypalWebPayments', () {
     const String clientId = 'testClientId';
     const String returnUrl = 'https://test.return.url';
     const String orderId = 'testOrderId';

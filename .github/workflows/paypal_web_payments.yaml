@@ -1,0 +1,21 @@
+name: paypal_web_payments
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Install package dependencies
+        run: flutter pub get
+      - name: Analyze source code
+        run: flutter analyze --fatal-warnings
+      - name: Run unit tests
+        run: flutter test -r github
