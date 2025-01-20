@@ -5,17 +5,18 @@
 Pod::Spec.new do |s|
   s.name             = 'paypal_web_payments'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'Flutter wrapper for the official PayPal Web Payments SDKs for Android and iOS, providing a simple and unified interface to integrate PayPal payments into your Flutter apps'
   s.description      = <<-DESC
-A new Flutter plugin project.
+Flutter wrapper for the official PayPal Web Payments SDKs for Android and iOS, providing a simple and unified interface to integrate PayPal payments into your Flutter apps
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Luca Vinciguerra' => 'lvinci@outlook.de' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.platform = :ios, '12.0'
+  s.dependency 'PayPal/PayPalWebPayments', '1.5.0'
+  s.platform = :ios, '14.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
